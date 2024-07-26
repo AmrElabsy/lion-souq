@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('cart_trackings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('role');
-            $table->rememberToken();
+            $table->enum('status', ['in_progress', 'pending', 'approved', 'is_shipped', 'delivered']);
+            $table->unsignedBigInteger('cart_id');
+            $table->dateTime('datetime');
             $table->timestamps();
+    
+            $table->foreign('cart_id')->on('carts')->references('id')->onDelete('CASCADE');
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('cart_trackings');
     }
 };
