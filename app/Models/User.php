@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use PharIo\Version\AndVersionConstraintGroup;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -42,4 +44,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    
+    const ADMIN = 'admin';
+    const VENDOR = 'vendor';
+    const USER = 'user';
+    
+    public function vendors() {
+        return $this->hasMany(Vendor::class);
+    }
 }

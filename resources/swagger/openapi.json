@@ -1,0 +1,780 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "My API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://your-api-url.com"
+    }
+  ],
+  "paths": {
+    "/user": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get a list of users",
+        "responses": {
+          "200": {
+            "description": "A list of users",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Add new User",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User-Write"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Input"
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Get a User",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Update a User",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User Updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User-Write"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "description": "Delete a User",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "User Deleted"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/vendor": {
+      "get": {
+        "tags": [
+          "Vendors"
+        ],
+        "summary": "Get a list of Vendors",
+        "responses": {
+          "200": {
+            "description": "List of Vendors",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vendors"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Vendors"
+        ],
+        "summary": "Add new Vendor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Vendor-Write"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Vendor Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Vendor"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Input"
+          }
+        }
+      }
+    },
+    "/vendor/{id}": {
+      "get": {
+        "tags": [
+          "Vendors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Vendors"
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Vendors"
+        ]
+      }
+    },
+    "/category": {
+      "get": {
+        "tags": [
+          "Categories"
+        ]
+      },
+      "post": {
+        "tags": [
+          "Categories"
+        ]
+      }
+    },
+    "/category/{id}": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Categories"
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Categories"
+        ]
+      }
+    },
+    "/product": {
+      "get": {
+        "tags": [
+          "Products"
+        ]
+      },
+      "post": {
+        "tags": [
+          "Products"
+        ]
+      }
+    },
+    "/product/{id}": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Products"
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Products"
+        ]
+      }
+    },
+    "/comment": {
+      "post": {
+        "tags": [
+          "Products"
+        ]
+      }
+    },
+    "/rating": {
+      "post": {
+        "tags": [
+          "Products"
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Cart": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "values": "in_progress, done"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Products"
+            }
+          }
+        }
+      },
+      "Categories": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Products"
+            }
+          }
+        }
+      },
+      "Category-Write": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Comments": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "user": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Comment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "product": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "user": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Orders": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "vendor": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "user": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "total": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Products"
+            }
+          }
+        }
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "vendor": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "user": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Products": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "vendor": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "category": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "image": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          }
+        }
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "image": {
+            "type": "string"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductImages"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tags"
+            }
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comments"
+            }
+          },
+          "vendor": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "category": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "Product-Write": {
+        "type": "object",
+        "properities": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "vendor_id": {
+            "type": "integer"
+          },
+          "category_id": {
+            "type": "integer"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "ProductImages": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "path": {
+            "type": "string"
+          }
+        }
+      },
+      "ProductImage": {
+        "type": "object",
+        "properties": null
+      },
+      "Tags": {
+        "type": "string"
+      },
+      "Tag": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Products"
+            }
+          }
+        }
+      },
+      "Users": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      },
+      "User-Write": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      },
+      "Vendors": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "Vendor": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "products": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Products"
+            }
+          }
+        }
+      },
+      "Vendor-Write": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

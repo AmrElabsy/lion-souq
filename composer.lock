@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d9732da9b1c1f909c5c2e4ccf4fbe45",
+    "content-hash": "6760d0e39dbe4c0ae764f08881b62045",
     "packages": [
         {
             "name": "brick/math",
@@ -1207,6 +1207,142 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
+            "name": "intervention/gif",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/gif.git",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/gif/zipball/3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "reference": "3a2b5f8a8856e8877cdab5c47e51aab2d4cb23a3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Gif\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "Native PHP GIF Encoder/Decoder",
+            "homepage": "https://github.com/intervention/gif",
+            "keywords": [
+                "animation",
+                "gd",
+                "gif",
+                "image"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/gif/issues",
+                "source": "https://github.com/Intervention/gif/tree/4.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-03-26T17:23:47+00:00"
+        },
+        {
+            "name": "intervention/image",
+            "version": "3.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "5451ff9f909c2fc836722e5ed6831b9f9a6db68c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/5451ff9f909c2fc836722e5ed6831b9f9a6db68c",
+                "reference": "5451ff9f909c2fc836722e5ed6831b9f9a6db68c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "intervention/gif": "^4.1",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "suggest": {
+                "ext-exif": "Recommended to be able to read EXIF data properly."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "PHP image manipulation",
+            "homepage": "https://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "resize",
+                "thumbnail",
+                "watermark"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/image/issues",
+                "source": "https://github.com/Intervention/image/tree/3.7.2"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-07-05T13:35:01+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v10.48.17",
             "source": {
@@ -2394,6 +2530,76 @@
                 "source": "https://github.com/nette/utils/tree/v4.0.4"
             },
             "time": "2024-01-17T16:50:36+00:00"
+        },
+        {
+            "name": "nextapps/laravel-swagger-ui",
+            "version": "0.10.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nextapps-be/laravel-swagger-ui.git",
+                "reference": "a308e5e4553989ba372755f979d09f5135893bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nextapps-be/laravel-swagger-ui/zipball/a308e5e4553989ba372755f979d09f5135893bf8",
+                "reference": "a308e5e4553989ba372755f979d09f5135893bf8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/framework": "^9.0|^10.0|^11.0",
+                "php": "^8.1|^8.2|^8.3"
+            },
+            "require-dev": {
+                "adamwojs/php-cs-fixer-phpdoc-force-fqcn": "^2.0",
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "guzzlehttp/guzzle": "^7.5",
+                "jasonmccreary/laravel-test-assertions": "^2.3",
+                "orchestra/testbench": "^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.5|^10.0",
+                "squizlabs/php_codesniffer": "^3.6"
+            },
+            "suggest": {
+                "ext-yaml": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "NextApps\\SwaggerUi\\SwaggerUiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "NextApps\\SwaggerUi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Günther Debrauwer",
+                    "email": "gunther@nextapps.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add Swagger UI to a Laravel application.",
+            "homepage": "https://github.com/nextapps/laravel-swagger-ui",
+            "keywords": [
+                "laravel",
+                "nextapps",
+                "openapi",
+                "swagger",
+                "swagger-ui"
+            ],
+            "support": {
+                "issues": "https://github.com/nextapps-be/laravel-swagger-ui/issues",
+                "source": "https://github.com/nextapps-be/laravel-swagger-ui/tree/0.10.1"
+            },
+            "time": "2024-07-25T13:21:36+00:00"
         },
         {
             "name": "nikic/php-parser",

@@ -168,6 +168,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\SwaggerUiServiceProvider::class,
     ])->toArray(),
 
     /*
@@ -182,6 +183,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
